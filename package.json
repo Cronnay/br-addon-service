@@ -1,0 +1,40 @@
+{
+  "name": "br-addon-storage",
+  "version": "1.0.0",
+  "description": "Storage to handle request for retrieving the packages",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/bootstrap.ts PORT=3000 ENVIRONMENT=DEV",
+    "prod": "tsc && node ./build/bootstrap.js ENVIRONMENT=PROD"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cronnay/br-addon-storage.git"
+  },
+  "author": "Sebastian Berglönn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cronnay/br-addon-storage/issues"
+  },
+  "homepage": "https://github.com/Cronnay/br-addon-storage#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/helmet": "0.0.47",
+    "@types/morgan": "^1.9.1",
+    "@types/multer": "^1.4.3",
+    "@types/node": "^14.0.14"
+  }
+}
