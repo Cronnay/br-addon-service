@@ -1,0 +1,23 @@
+[package]
+name = "br-addon-service"
+version = "0.1.0"
+authors = ["Sebastian Berglönn <sebastianberglonn@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "database"
+path = "src/database/main.rs"
+
+[[bin]]
+name = "service"
+path = "src/service/main.rs"
+
+[dependencies]
+actix-web = "2.0"
+actix-rt = "1.0"
+dotenv = "0.15.0"
+mysql = "18.2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
