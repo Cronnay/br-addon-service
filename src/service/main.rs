@@ -9,8 +9,7 @@ use actix_web::{web, App, HttpServer};
 use crate::routes::AppRoutes;
 use dotenv::dotenv;
 use std::env;
-use mysql::{Pool, Error, PooledConn};
-use mysql::prelude::Queryable;
+use mysql::{Pool, PooledConn};
 
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
@@ -24,11 +23,11 @@ async fn main() -> std::io::Result<()> {
         .await
 }
 
-pub fn create_connection<'a>() -> Result<PooledConn, mysql::Error> {
+pub fn create_connection() -> Result<PooledConn, mysql::Error> {
     let database_url = env::var("DATABASE_URL")
         .expect("DATABASE_URL must be set");
 
     let pool = Pool::new(database_url).expect("Could not create pool");
-    let mut conn = pool.get_conn().expect("Could not connect");
+    let conn = pool.get_conn().expect("Could not connect");
     Ok(conn)
 }

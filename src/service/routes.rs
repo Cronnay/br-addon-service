@@ -1,5 +1,4 @@
 use actix_web::{HttpRequest, Responder, HttpResponse};
-use std::env;
 use crate::create_connection;
 use mysql::prelude::Queryable;
 use crate::models::Account;

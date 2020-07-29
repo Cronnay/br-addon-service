@@ -1,5 +1,4 @@
 use mysql::*;
-use mysql::prelude::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, PartialEq, Eq, Serialize, Deserialize)]

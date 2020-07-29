@@ -4,7 +4,7 @@ use mysql::prelude::Queryable;
 
 fn main() {
     dotenv::dotenv().ok();
-    create_connection();
+    create_connection().unwrap();
 }
 
 
