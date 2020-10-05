@@ -6,7 +6,8 @@ use crate::models::Account;
 pub struct AppRoutes {}
 
 impl AppRoutes {
-    pub async fn index(_req: HttpRequest) -> impl Responder {
+    // just retrieve all accounts
+    pub async fn index(_req: HttpRequest, hello: String) -> impl Responder {
         let mut connection = create_connection().unwrap();
         let get_accounts: Vec<Account> = connection.query_map("SELECT id, email, firebase_id FROM account",
         |(id, email, firebase_id)| {

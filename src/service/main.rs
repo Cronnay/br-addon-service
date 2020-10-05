@@ -1,3 +1,4 @@
+mod authentication;
 mod models;
 mod routes;
 extern crate actix_web;
